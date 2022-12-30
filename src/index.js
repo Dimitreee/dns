@@ -853,9 +853,14 @@ const connectExtension = async (domain, dnsItem) => {
             '.',
             TonWeb.dns.DNS_CATEGORY_WALLET
         )
-        const dnsRecordAdnl = await dnsItem.resolve(
-            '.',
+        const dnsRecordSite = await dnsItem.resolve(
+            '.', 
             TonWeb.dns.DNS_CATEGORY_SITE
+        )
+        const isSiteInStorage = dnsRecordSite instanceof TonWeb.utils.StorageBagId;
+        const dnsRecordStorage = await dnsItem.resolve(
+            '.', 
+            TonWeb.dns.DNS_CATEGORY_STORAGE
         )
         const dnsRecordResolver = await dnsItem.resolve(
             '.',
@@ -866,7 +871,9 @@ const connectExtension = async (domain, dnsItem) => {
             $('#editWalletRow input').value = dnsRecordWallet
                 ? dnsRecordWallet.toString(true, true, true, IS_TESTNET)
                 : ''
-            $('#editAdnlRow input').value = dnsRecordAdnl ? dnsRecordAdnl.toHex() : ''
+            $('#editAdnlRow input').value = dnsRecordSite ? dnsRecordSite.toHex() : ''
+            $('#siteStorage').checked = isSiteInStorage
+            $('#editStorageRow input').value = dnsRecordStorage ? dnsRecordStorage.toHex() : ''
             $('#editResolverRow input').value = dnsRecordResolver
                 ? dnsRecordResolver.toString(true, true, true, IS_TESTNET)
                 : ''
@@ -924,8 +931,13 @@ const connectExtension = async (domain, dnsItem) => {
                 let record = null
                 if (value) {
                     try {
-                        const adnlAddress = new TonWeb.utils.AdnlAddress(value)
-                        record = TonWeb.dns.createAdnlAddressRecord(adnlAddress)
+                        if ($('#siteStorage').checked) {
+                            const bagId = new TonWeb.utils.StorageBagId(value)
+                            record = TonWeb.dns.createStorageBagIdRecord(bagId)
+                        } else {
+                            const adnlAddress = new TonWeb.utils.AdnlAddress(value)
+                            record = TonWeb.dns.createAdnlAddressRecord(adnlAddress)
+                        }
                     } catch (e) {
                         console.error(e)
                         alert(locale.invalid_address)
@@ -935,6 +947,24 @@ const connectExtension = async (domain, dnsItem) => {
 
                 setTx(TonWeb.dns.DNS_CATEGORY_SITE, value ? record : null)
             })
+
+            createEditBtn('#editStorageRow .edit-btn').addEventListener('click', () => {
+                const value = $('#editStorageRow input').value; // hex
+
+                let record = null;
+                if (value) {
+                    try {
+                        const bagId = new TonWeb.utils.StorageBagId(value);
+                        record = TonWeb.dns.createStorageBagIdRecord(bagId);
+                    } catch (e) {
+                        console.error(e);
+                        alert(locale.invalidAddress);
+                        return;
+                    }
+                }
+
+                setTx(TonWeb.dns.DNS_CATEGORY_STORAGE, value ? record : null);
+            });
 
             $('#editResolverRow input').placeholder = locale.address
 
@@ -1060,7 +1090,7 @@ document.querySelectorAll('.addr').forEach((node) => {
 
 let prevTimeoutId = null;
 
-document.querySelectorAll('input').forEach((node) => {
+document.querySelectorAll("input:not[type='checkbox']").forEach((node) => {
     node.addEventListener(('mousedown'), (e) => {
         e.target.classList.add('input__clicked')
 
