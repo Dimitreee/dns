@@ -610,6 +610,7 @@ const attachBidModalListeners = (domain, price, modalButton, address) => {
     }
 
     let localPrice = price;
+    const bidAddress = address || tonRootAddress;
     const bidModalInput = $("#bid__modal--bid__input")
     const submitStepButton = $("#bid__modal--submit__step")
     const submitPriceLabel = $("#bid__modal--submit__price")
@@ -721,35 +722,38 @@ const attachBidModalListeners = (domain, price, modalButton, address) => {
     const renderSecondStep = () => {
         toggle('.bid__modal--first__step', false)
         toggle('.bid__modal--second__step', true)
-        setAddress($('#freeBuyAddress'), address || tonRootAddress)
-        $('#domainName--bid__modal--payment').innerText = domain + '.ton'
-        $('#freeComment').innerText = domain
-        $('#freeComment').dataset.name = domain
 
-        $('#bidPrice').innerText = formatNumber(localPrice, false)
-        const isExtensionInstalled = !isMobile() && window.ton
-        const buyUrl = 'ton://transfer/' + tonRootAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
-
-        if (isExtensionInstalled) {
-            $('#freeBtn').href = buyUrl
-        } else {
-            $('#freeBtn').href = 'https://app.tonkeeper.com/transfer/' + tonRootAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
-        }
-
-        if (isMobile()) {
-            $('#freeBtn').href = buyUrl
-        }
-
-        $('#tonkeeperButton').href = 'https://app.tonkeeper.com/transfer/' + tonRootAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
-        $('#copyLinkbutton').setAttribute('address', buyUrl)
-
-        if (freeQrUrl !== buyUrl) {
-            freeQrUrl = buyUrl
-            renderQr('#freeQr', 'https://app.tonkeeper.com/transfer/' + tonRootAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000))
-        }
+        setAddress($('#freeBuyAddress'), bidAddress)
 
         showOtherPaymentMethods.removeEventListener('click', renderOtherPaymentsMethods)
         showOtherPaymentMethods.addEventListener('click', renderOtherPaymentsMethods)
+    }
+
+    // update bid modal payemnt data
+    $('#domainName--bid__modal--payment').innerText = domain + '.ton'
+    $('#freeComment').innerText = domain
+    $('#freeComment').dataset.name = domain
+
+    $('#bidPrice').innerText = formatNumber(localPrice, false)
+    const isExtensionInstalled = !isMobile() && window.ton
+    const buyUrl = 'ton://transfer/' + bidAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
+
+    if (isExtensionInstalled) {
+        $('#freeBtn').href = buyUrl
+    } else {
+        $('#freeBtn').href = 'https://app.tonkeeper.com/transfer/' + bidAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
+    }
+
+    if (isMobile()) {
+        $('#freeBtn').href = buyUrl
+    }
+
+    $('#tonkeeperButton').href = 'https://app.tonkeeper.com/transfer/' + bidAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000)
+    $('#copyLinkbutton').setAttribute('address', buyUrl)
+
+    if (freeQrUrl !== buyUrl) {
+        freeQrUrl = buyUrl
+        renderQr('#freeQr', 'https://app.tonkeeper.com/transfer/' + bidAddress + '?text=' + encodeURIComponent(domain) + '&amount=' + encodeURIComponent(localPrice * 1000000000))
     }
 
     $(modalButton).addEventListener('click', toggleBidModal, false)
@@ -854,12 +858,12 @@ const connectExtension = async (domain, dnsItem) => {
             TonWeb.dns.DNS_CATEGORY_WALLET
         )
         const dnsRecordSite = await dnsItem.resolve(
-            '.', 
+            '.',
             TonWeb.dns.DNS_CATEGORY_SITE
         )
         const isSiteInStorage = dnsRecordSite instanceof TonWeb.utils.StorageBagId;
         const dnsRecordStorage = await dnsItem.resolve(
-            '.', 
+            '.',
             TonWeb.dns.DNS_CATEGORY_STORAGE
         )
         const dnsRecordResolver = await dnsItem.resolve(
