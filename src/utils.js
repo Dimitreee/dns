@@ -346,6 +346,22 @@ window.BROWSER = (function (agent) {
     }
 })(window.navigator.userAgent.toLowerCase());
 
+function setTimerLoadingScreen(id){
+    const container = $(`#${id}`)
+    if (!container){
+        return
+    }
+    container.classList.add(FLIP_TIMER_CONTAINER_LOADING_CLASSNAME)
+}
+
+function removeTimerLoadingScreen(id){
+    const container = $(`#${id}`)
+    if (!container){
+        return;
+    }
+    container.classList.remove(FLIP_TIMER_CONTAINER_LOADING_CLASSNAME)
+}
+
 function makePageVisible(){
     document.body.classList.remove('hidden')
 }
