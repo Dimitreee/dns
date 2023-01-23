@@ -365,3 +365,7 @@ function removeTimerLoadingScreen(id){
 function makePageVisible(){
     document.body.classList.remove('hidden')
 }
+
+function encodeHTML(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
