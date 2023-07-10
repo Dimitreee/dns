@@ -60,7 +60,12 @@ let githubUsername, githubRepo, botUsername;
   ).catch(exitError);
 
   botUsername = getBot.data.result.username;
-  const url = `https://${githubUsername}.github.io/${githubRepo}`;
+
+  const botUrl = await question(
+      `Enter your static assets bot url: `
+  );
+
+  const url = botUrl || `https://${githubUsername}.github.io/${githubRepo}`;
 
   console.log(`\n\nSetting bot ${botUsername} webapp url to ${url}`);
 
