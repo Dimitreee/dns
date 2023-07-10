@@ -751,6 +751,10 @@ nav .container-inner {
     padding-right: 12px;
 }
 
+.hover__button.menu__controller .icon path {
+    stroke: var(--text-primary);
+}
+
 @media screen and (max-width: 568px) {
     nav .container-inner {
         padding: 16px 24px;
