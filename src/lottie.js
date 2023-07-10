@@ -2,6 +2,10 @@
 	let sunLottie = document.getElementById('sunLottie')
 	let moonLottie = document.getElementById('moonLottie')
 
+	if (!sunLottie || !moonLottie) {
+		return;
+	}
+
 	let themeButton = document.getElementById('lottie-button')
 
 	if (themeController.getTheme() === 'light') {

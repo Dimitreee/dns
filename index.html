@@ -67,375 +67,329 @@
 </script>
 <body class="hidden">
 <div class="app__container">
-<nav>
-    <div class="testnet-badge">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="icon testnet__icon">
-            <g stroke="#ED6767" stroke-width="1.6" clip-path="url(#a)">
-                <path stroke-linecap="round" d="M9.75 11.4951V6.84997m0 7.74183v-.5161"/>
-                <path d="M8.45096 3.25c.57735-1 2.02074-1 2.59804 0l6.7117 11.625c.5774 1-.1443 2.25-1.299 2.25H3.0383c-1.1547 0-1.87639-1.25-1.29904-2.25L8.45096 3.25Z"/>
-            </g>
-            <defs>
-                <clipPath id="a">
-                    <path fill="#fff" d="M0 0h20v20H0z"/>
-                </clipPath>
-            </defs>
-        </svg>
-        <span data-locale="testnet_badge_message">
+    <nav>
+        <div class="testnet-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="icon testnet__icon">
+                <g stroke="#ED6767" stroke-width="1.6" clip-path="url(#a)">
+                    <path stroke-linecap="round" d="M9.75 11.4951V6.84997m0 7.74183v-.5161"/>
+                    <path d="M8.45096 3.25c.57735-1 2.02074-1 2.59804 0l6.7117 11.625c.5774 1-.1443 2.25-1.299 2.25H3.0383c-1.1547 0-1.87639-1.25-1.29904-2.25L8.45096 3.25Z"/>
+                </g>
+                <defs>
+                    <clipPath id="a">
+                        <path fill="#fff" d="M0 0h20v20H0z"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            <span data-locale="testnet_badge_message">
             Warning! This is a test network, do not send real Toncoin! Test domains may be dropped.
         </span>
-    </div>
-    <div class="container-inner">
-        <div class="badge">
-            <a href="/">
-                <div class="badge-icon"></div>
-            </a>
-            <span class="badge__dns">
-            </span>
         </div>
-        <div id="navInput" class="nav-input" style="display: none">
-            <svg class="icon nav-input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="container-inner">
+            <div class="badge">
+                <a href="/">
+                    <div class="badge-icon"></div>
+                </a>
+                <span class="badge__dns">
+            </span>
+            </div>
+            <div id="navInput" class="nav-input" style="display: none">
+                <svg class="icon nav-input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.0666 17.8667C16.8958 17.8667 20 14.7625 20 10.9333C20 7.10416 16.8958 4 13.0666 4C9.23746 4 6.1333 7.10416 6.1333 10.9333C6.1333 14.7625 9.23746 17.8667 13.0666 17.8667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M8 16L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input id="navInputElement" enterkeyhint="search" type="text" data-locale="start_input_placeholder" placeholder="[data-locale]" class="suggestions__input"/>
+            </div>
+
+            <div class="nav__controls">
+                <button class="nav-item__desktop hover__button" id="myDomainsButton" style="display: none;" disabled>
+                    <span class="bold" data-locale="my_domains"></span>
+                </button>
+                <div id="connect-wallet-button"></div>
+                <div class="mobile">
+                    <button class="hover__button menu__controller mobile__domains__button" onclick="navigateToMyDomainsView()">
+                        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 14C16.1046 14 17 13.1046 17 12C17 10.8954 16.1046 10 15 10C13.8954 10 13 10.8954 13 12C13 13.1046 13.8954 14 15 14Z" stroke="#232328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 20C19.5523 20 20 19.5523 20 19C20 18.4477 19.5523 18 19 18C18.4477 18 18 18.4477 18 19C18 19.5523 18.4477 20 19 20Z" stroke="#232328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 6C19.5523 6 20 5.55228 20 5C20 4.44772 19.5523 4 19 4C18.4477 4 18 4.44772 18 5C18 5.55228 18.4477 6 19 6Z" stroke="#232328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 11L7.5 7M7.5 16.5L13.5 13M16 13.5L18.5 18M18.5 6L16 10.5" stroke="#232328" stroke-width="1.5"/>
+                            <path d="M6 20C7.10457 20 8 19.1046 8 18C8 16.8954 7.10457 16 6 16C4.89543 16 4 16.8954 4 18C4 19.1046 4.89543 20 6 20Z" stroke="#232328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6C4 7.10457 4.89543 8 6 8Z" stroke="#232328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="startScreen" class="start animate">
+        <h1 data-locale="open_auction">Buy .ton domains</h1>
+        <p>
+            <span data-locale="start_splash">Give crypto wallets, smart contracts or websites short readable names.</span>
+            <a class="arrow__link" href="/about.html" target="_blank" data-locale="more_info">
+                More info&nbsp;<span class="icon arrow__right unbreak"></span>
+            </a>
+        </p>
+        <div class="start-input-container">
+            <svg class="icon start-input-container-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.0666 17.8667C16.8958 17.8667 20 14.7625 20 10.9333C20 7.10416 16.8958 4 13.0666 4C9.23746 4 6.1333 7.10416 6.1333 10.9333C6.1333 14.7625 9.23746 17.8667 13.0666 17.8667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M8 16L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <input id="navInputElement" enterkeyhint="search" type="text" data-locale="start_input_placeholder" placeholder="[data-locale]" class="suggestions__input"/>
-        </div>
-
-        <div class="nav__controls">
-            <button class="nav-item__desktop hover__button" id="myDomainsButton" style="display: none;" disabled>
-              <span class="bold" data-locale="my_domains"></span>
-            </button>
-            <div id="connect-wallet-button"></div>
-            <div class="mobile">
-                <button class="hover__button menu__controller" onclick="toggleMobileMenu()">
-                    <svg class="icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.33281 8.13354C6.67007 8.13354 6.13281 8.6708 6.13281 9.33354C6.13281 9.99629 6.67007 10.5335 7.33281 10.5335H24.6657C25.3284 10.5335 25.8657 9.99629 25.8657 9.33354C25.8657 8.6708 25.3284 8.13354 24.6657 8.13354H7.33281Z" fill="currentColor" />
-                        <path d="M6.13281 16.0002C6.13281 15.3375 6.67007 14.8002 7.33281 14.8002H24.6657C25.3284 14.8002 25.8657 15.3375 25.8657 16.0002C25.8657 16.663 25.3284 17.2002 24.6657 17.2002H7.33281C6.67007 17.2002 6.13281 16.663 6.13281 16.0002Z" fill="currentColor" />
-                        <path d="M6.13281 22.6669C6.13281 22.0041 6.67007 21.4669 7.33281 21.4669H24.6657C25.3284 21.4669 25.8657 22.0041 25.8657 22.6669C25.8657 23.3296 25.3284 23.8669 24.6657 23.8669H7.33281C6.67007 23.8669 6.13281 23.3296 6.13281 22.6669Z" fill="currentColor" />
-                    </svg>
-                </button>
+            <input id="startInputElement" enterkeyhint="search" class="start-input suggestions__input" type="text" placeholder="Enter a domain..." />
+            <svg class="icon reset__input--icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.00012 18L18.0001 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M6.00012 6L17.9986 18.0015" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <div class="start-input-container__domain--container">
+                <span class="start-input-container__domain">.ton</span>
             </div>
         </div>
+        <div class="start-error" style="display: none"></div>
     </div>
-</nav>
 
-<div id="startScreen" class="start animate">
-    <h1 data-locale="open_auction">Buy .ton domains</h1>
-    <p>
-        <span data-locale="start_splash">Give crypto wallets, smart contracts or websites short readable names.</span>
-        <a class="arrow__link" href="/about.html" target="_blank" data-locale="more_info">
-            More info&nbsp;<span class="icon arrow__right unbreak"></span>
-        </a>
-    </p>
-    <div class="start-input-container">
-        <svg class="icon start-input-container-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.0666 17.8667C16.8958 17.8667 20 14.7625 20 10.9333C20 7.10416 16.8958 4 13.0666 4C9.23746 4 6.1333 7.10416 6.1333 10.9333C6.1333 14.7625 9.23746 17.8667 13.0666 17.8667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M8 16L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <input id="startInputElement" enterkeyhint="search" class="start-input suggestions__input" type="text" placeholder="Enter a domain..." />
-        <svg class="icon reset__input--icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.00012 18L18.0001 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            <path d="M6.00012 6L17.9986 18.0015" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-        <div class="start-input-container__domain--container">
-            <span class="start-input-container__domain">.ton</span>
+    <div id="myDomainsView" class="start animate">
+        <div id="myDomainsContainer">
+            <div class="my-domains-title-container">
+                <div class="my-domains-title my-domains-title-loading" data-locale="my_domains">My domains</div>
+            </div>
+            <div class="my-domains-table-loading"></div>
+            <table class="my-domains-table">
+                <tr class="my-domains-table-headers">
+                    <th data-locale="my_domains_list_domain_column">Domain</th>
+                    <th data-locale="my_domains_list_price_column">Sale price</th>
+                    <th data-locale="my_domains_list_date_column">Expires in</th>
+                    <th class="my-domains-table-last-column">&nbsp;</th>
+                </tr>
+            </table>
+            <button id="myDomainsLoadMoreButton" class="btn inversed" style="display: none;">
+                Show more
+            </button>
+        </div>
+        <div id="noDomainsContainer">
+            <img id="noDomainsBannerDark" src="/assets/no_domains_dark.svg" alt="No domains" class="no-domains-image" />
+            <img id="noDomainsBannerLight" src="/assets/no_domains_light.svg" alt="No domains" class="no-domains-image" />
+            <div class="no-domains-title" data-locale="my_domains_empty_title">You have no domains yet</div>
+            <div class="no-domains-caption" data-locale="my_domains_empty_caption">Participate in the auction and buy domains</div>
+            <button id="noDomainsStartNowButton" class="btn" data-locale="my_domains_empty_button">
+                Start now
+            </button>
         </div>
     </div>
-    <div class="start-error" style="display: none"></div>
-</div>
 
-<div id="myDomainsView" class="start animate">
-  <div id="myDomainsContainer">
-    <div class="my-domains-title-container">
-        <div class="my-domains-title my-domains-title-loading" data-locale="my_domains">My domains</div>
-    </div>
-    <div class="my-domains-table-loading"></div>
-    <table class="my-domains-table">
-      <tr class="my-domains-table-headers">
-        <th data-locale="my_domains_list_domain_column">Domain</th>
-        <th data-locale="my_domains_list_price_column">Sale price</th>
-        <th data-locale="my_domains_list_date_column">Expires in</th>
-        <th class="my-domains-table-last-column">&nbsp;</th>
-      </tr>
-    </table>
-    <button id="myDomainsLoadMoreButton" class="btn inversed" style="display: none;">
-      Show more
-    </button>
-  </div>
-  <div id="noDomainsContainer">
-    <img id="noDomainsBannerDark" src="/assets/no_domains_dark.svg" alt="No domains" class="no-domains-image" />
-    <img id="noDomainsBannerLight" src="/assets/no_domains_light.svg" alt="No domains" class="no-domains-image" />
-    <div class="no-domains-title" data-locale="my_domains_empty_title">You have no domains yet</div>
-    <div class="no-domains-caption" data-locale="my_domains_empty_caption">Participate in the auction and buy domains</div>
-    <button id="noDomainsStartNowButton" class="btn" data-locale="my_domains_empty_button">
-      Start now
-    </button>
-  </div>
-</div>
+    <div class="main animate">
+        <div id="domainStatus" class="status">
+            <div class="loader"></div>
+            <span></span>
+        </div>
 
-<div class="main animate">
-    <div id="domainStatus" class="status">
-        <div class="loader"></div>
-        <span></span>
-    </div>
+        <span id="domainName" class="line-clamp"></span>
 
-    <span id="domainName" class="line-clamp"></span>
-
-    <div id="auctionDomainScreen">
-        <div class="info">
-            <p class="row">
-                <span class="row__title" data-locale="highest_bid">Highest bid</span>
-                <span class="priceContainer">
+        <div id="auctionDomainScreen">
+            <div class="info">
+                <p class="row">
+                    <span class="row__title" data-locale="highest_bid">Highest bid</span>
+                    <span class="priceContainer">
                     <span id="auctionAmount" class="sale__price">---</span>
                     <span id="auctionAmountConverted" class="converted__price">---</span>
                 </span>
-            </p>
+                </p>
 
-            <p class="row row--border__bottom align__center">
-                <span class="row__title" data-locale="from">From</span>
-                <span id="auctionOwnerAddress" class="addr node__to__copy"></span>
-            </p>
+                <p class="row row--border__bottom align__center">
+                    <span class="row__title" data-locale="from">From</span>
+                    <span id="auctionOwnerAddress" class="addr node__to__copy"></span>
+                </p>
 
-            <p class="row">
-                <span class="row__title" data-locale="bid_step">Bid step</span>
-                <span class="priceContainer">
+                <p class="row">
+                    <span class="row__title" data-locale="bid_step">Bid step</span>
+                    <span class="priceContainer">
                     <span id="auctionBidStep" class="sale__price">---</span>
                     <span id="auctionBidStepConverted" class="converted__percent"></span>
                 </span>
-            </p>
+                </p>
 
-            <p class="row">
-                <span class="row__title" data-locale="minimum_bid">Minimum bid</span>
-                <span class="priceContainer">
+                <p class="row">
+                    <span class="row__title" data-locale="minimum_bid">Minimum bid</span>
+                    <span class="priceContainer">
                     <span id="auctionMinBet" class="sale__price">---</span>
                     <span id="auctionMinBetConverted" class="converted__price">---</span>
                 </span>
-            </p>
-        </div>
+                </p>
+            </div>
 
-        <div class="flip__container">
-            <span class="expires__date" data-locale="auction_ends">Auction ends in</span>
-            <div id="auctionEndsRow" class="flip__row">
-                <div id="actionEndDate" class="flip__strong">
-                    <ul class="flip-clock-container" id="auction-bid-flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+            <div class="flip__container">
+                <span class="expires__date" data-locale="auction_ends">Auction ends in</span>
+                <div id="auctionEndsRow" class="flip__row">
+                    <div id="actionEndDate" class="flip__strong">
+                        <ul class="flip-clock-container" id="auction-bid-flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="buttonWrapper">
-            <a id="auctionBtn" target="_blank" class="btn">
-                <img src="/assets/hammer.svg" alt="Place bid">
-                <span data-locale="place_bid">Place bid</span>
-            </a>
-            <a id="auctionInfoBtn" class="btn outline" href="/about.html#claim-your-ton-domain" target="_blank" >
+            <div class="buttonWrapper">
+                <a id="auctionBtn" target="_blank" class="btn">
+                    <img src="/assets/hammer.svg" alt="Place bid">
+                    <span data-locale="place_bid">Place bid</span>
+                </a>
+                <a id="auctionInfoBtn" class="btn outline" href="/about.html#claim-your-ton-domain" target="_blank" >
                 <span data-locale="claim_your_domain">
                     What is Ton Domains?
                 </span>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div id="busyDomainScreen">
-        <div class="info">
-            <p id="salePriceRow" class="row">
-                <span class="row__title" data-locale="sale__price">Sale price</span>
-                <span class="priceContainer">
+        <div id="busyDomainScreen">
+            <div class="info">
+                <p id="salePriceRow" class="row">
+                    <span class="row__title" data-locale="sale__price">Sale price</span>
+                    <span class="priceContainer">
                     <span id="salePrice" class="sale__price">---</span>
                     <span id="salePriceConverted" class="converted__price">---</span>
                 </span>
-            </p>
-            <p id="busyOwnerRow" class="row align__center">
-                <span data-locale="owner" class="row__title">Owner</span>
-                <span id="busyOwnerAddress" class="addr node__to__copy"></span>
-            </p>
-            <div id="domainEditContainer">
-                <div class="edit-form">
-                    <div id="editWalletRow" class="edit__row">
-                        <label class="edit__label" for="editWalletInput" data-locale="wallet_address">
-                            Wallet address
-                        </label>
-                        <input enterkeyhint="done" class="default__input" type="text" placeholder="Address" id="editWalletInput">
-                        <div class="edit__button">
-                            <a data-locale="save">Save</a>
+                </p>
+                <p id="busyOwnerRow" class="row align__center">
+                    <span data-locale="owner" class="row__title">Owner</span>
+                    <span id="busyOwnerAddress" class="addr node__to__copy"></span>
+                </p>
+                <div id="domainEditContainer">
+                    <div class="edit-form">
+                        <div id="editWalletRow" class="edit__row">
+                            <label class="edit__label" for="editWalletInput" data-locale="wallet_address">
+                                Wallet address
+                            </label>
+                            <input enterkeyhint="done" class="default__input" type="text" placeholder="Address" id="editWalletInput">
+                            <div class="edit__button">
+                                <a data-locale="save">Save</a>
+                            </div>
                         </div>
-                    </div>
-                    <div id="editAdnlRow" class="edit__row">
-                        <label class="edit__label" for="editAdnlInput" data-locale="ton_site">
-                            TON Site
-                        </label>
-                        <input enterkeyhint="done" class="default__input" type="text" placeholder="ADNL address (in HEX)" id="editAdnlInput">
-                        <div class="edit__button">
-                            <a data-locale="save" class="edit__button">Save</a>
+                        <div id="editAdnlRow" class="edit__row">
+                            <label class="edit__label" for="editAdnlInput" data-locale="ton_site">
+                                TON Site
+                            </label>
+                            <input enterkeyhint="done" class="default__input" type="text" placeholder="ADNL address (in HEX)" id="editAdnlInput">
+                            <div class="edit__button">
+                                <a data-locale="save" class="edit__button">Save</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="edit-row edit-row-checkbox" >
-                        <div class="edit-label">
+                        <div class="edit-row edit-row-checkbox" >
+                            <div class="edit-label">
+                            </div>
+                            <div style="font-size: 14px"><input type="checkbox" id="siteStorage"><label for="siteStorage" data-locale="storage_checkbox">Hosting in TON Storage</label></div>
                         </div>
-                        <div style="font-size: 14px"><input type="checkbox" id="siteStorage"><label for="siteStorage" data-locale="storage_checkbox">Hosting in TON Storage</label></div>
-                    </div>
-                    <div id="editStorageRow" class="edit-row edit__row">
-                        <div class="edit-label edit__label">
-                            TON Storage
+                        <div id="editStorageRow" class="edit-row edit__row">
+                            <div class="edit-label edit__label">
+                                TON Storage
+                            </div>
+                            <input type="text" placeholder="HEX" class="default__input">
+                            <div class="edit-btn edit__button">
+                                <a data-locale="set" class="edit-btn">Save</a>
+                            </div>
                         </div>
-                        <input type="text" placeholder="HEX" class="default__input">
-                        <div class="edit-btn edit__button">
-                            <a data-locale="set" class="edit-btn">Save</a>
-                        </div>
-                    </div>
-                    <div id="editResolverRow" class="edit__row">
-                        <label class="edit__label" for="editResolverInput" data-locale="subdomains">
-                            Subdomains
-                        </label>
-                        <input enterkeyhint="done" class="default__input" type="text" placeholder="Address" id="editResolverInput">
-                        <div class="edit__button" >
-                            <a data-locale="save">Save</a>
+                        <div id="editResolverRow" class="edit__row">
+                            <label class="edit__label" for="editResolverInput" data-locale="subdomains">
+                                Subdomains
+                            </label>
+                            <input enterkeyhint="done" class="default__input" type="text" placeholder="Address" id="editResolverInput">
+                            <div class="edit__button" >
+                                <a data-locale="save">Save</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="flip__container">
+            <div class="flip__container">
             <span class="expires__date" data-locale="expires">
                 Expires on
                 <span id="expiresDate"></span>
             </span>
-            <div id="busyEndTimeRow" class="flip__row">
-                <div id="busyEndDate" class="flip__strong">
-                    <ul class="flip-clock-container" id="flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+                <div id="busyEndTimeRow" class="flip__row">
+                    <div id="busyEndDate" class="flip__strong">
+                        <ul class="flip-clock-container" id="flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <p class="buttonWrapper">
-            <a id="manageDomainBtn" class="btn">
+            <p class="buttonWrapper">
+                <a id="manageDomainBtn" class="btn">
                 <span data-locale="manage_domain">
                     Manage domain
                 </span>
-            </a>
-            <a id="manageDomainGoBackBtn" class="btn outline" style="display: none;">
+                </a>
+                <a id="manageDomainGoBackBtn" class="btn outline" style="display: none;">
                 <span data-locale="manage_domain_go_back">
                     Go back
                 </span>
-            </a>
-            <a id="infoBtn" class="btn outline" href="/about.html#claim-your-ton-domain" target="_blank" >
+                </a>
+                <a id="infoBtn" class="btn outline" href="/about.html#claim-your-ton-domain" target="_blank" >
                 <span data-locale="claim_your_domain">
                     What is Ton Domains?
                 </span>
-            </a>
-            <a id="renewDomainButton" class="btn outline">
+                </a>
+                <a id="renewDomainButton" class="btn outline">
               <span data-locale="renew_this_domain">
                 Renew this domain
               </span>
-            </a>
-        </p>
-    </div>
+                </a>
+            </p>
+        </div>
 
-    <div id="freeDomainScreen">
-        <div class="info">
-            <p id="betPriceRow" class="row">
-                <span class="row__title" data-locale="bet_price">Bet price</span>
-                <span class="priceContainer">
+        <div id="freeDomainScreen">
+            <div class="info">
+                <p id="betPriceRow" class="row">
+                    <span class="row__title" data-locale="bet_price">Bet price</span>
+                    <span class="priceContainer">
                     <span id="freeMinBet" class="sale__price">---</span>
                     <span id="freeMinBetConverted" class="converted__price">---</span>
                 </span>
-            </p>
-            <p class="row info__row">
-                <span data-locale="start_bid">The domain can be purchased at an open auction. To&nbsp;start the auction, make the first bid.</span>
-            </p>
-        </div>
+                </p>
+                <p class="row info__row">
+                    <span data-locale="start_bid">The domain can be purchased at an open auction. To&nbsp;start the auction, make the first bid.</span>
+                </p>
+            </div>
 
-        <div class="flip__container">
-            <span class="expires__date" data-locale="auction_duration">Auction duration</span>
-            <div id="auctionTimeTimeRow" class="flip__row">
-                <div id="auctionEndDate" class="flip__strong">
-                    <ul class="flip-clock-container" id="bid-flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+            <div class="flip__container">
+                <span class="expires__date" data-locale="auction_duration">Auction duration</span>
+                <div id="auctionTimeTimeRow" class="flip__row">
+                    <div id="auctionEndDate" class="flip__strong">
+                        <ul class="flip-clock-container" id="bid-flip-clock-container" data-end-date="December 12, 2022 00:00:00"></ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <p class="buttonWrapper">
-            <a id="bidButton" class="btn">
-                <img src="/assets/hammer.svg" alt="Place bid">
-                <span data-locale="bid_to_start">
+            <p class="buttonWrapper">
+                <a id="bidButton" class="btn">
+                    <img src="/assets/hammer.svg" alt="Place bid">
+                    <span data-locale="bid_to_start">
                     Place a bid to start the auction
                 </span>
-            </a>
-            <a id="freeDomainInfoBtn" class="btn outline" href="/about.html" target="_blank" >
+                </a>
+                <a id="freeDomainInfoBtn" class="btn outline" href="/about.html" target="_blank" >
                 <span data-locale="claim_your_domain">
                     What is Ton Domains?
                 </span>
-            </a>
-        </p>
-    </div>
-
-    <div id="domainLoadingScreen">
-        <div class="info">
-        </div>
-
-        <p class="buttonWrapper">
-            <a class="btn"></a>
-        </p>
-    </div>
-</div>
-
-<div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-header">
-        <div class="badge">
-            <a href="https://ton.org/">
-                <div class="badge-icon"></div>
-            </a>
-            <span class="badge__dns badge__dns-mobile">
-        </span>
-        </div>
-        <button class="hover__button close-menu-icon" onclick="toggleMobileMenu()">
-            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.00012 18L18.0001 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <path d="M6.00012 6L17.9986 18.0015" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-        </button>
-    </div>
-    <div class="mobile-menu-body">
-        <div class="mobile-menu__top">
-
-            <div class="mobile-menu-navigation">
-                <a class="mobile-menu-row" id="myDomainsMobileButton" style="display: none;" disabled>
-                  <div class="mobile-menu-left">
-                    <span class="mobile-lottie-container">
-                      <lottie-player id="myDomainsLottieLight" src="./assets/lottie/my_domains_light.json" background="transparent" speed="1" style="width: 24px; height: 24px;"></lottie-player>
-                        <lottie-player id="myDomainsLottieDark" src="./assets/lottie/my_domains_dark.json" background="transparent" speed="1" style="width: 24px; height: 24px;"></lottie-player>
-                    </span>
-                    <span id="myDomainsMobileButtonTitle" data-locale="my_domains">My domains</span>
-                  </div>
                 </a>
-                <div class="mobile-menu-row">
-                    <div class="mobile-menu-left">
-                    <span class="mobile-lottie-container">
-                        <lottie-player id="moonLottieBlack" src="./assets/lottie/moon_sun_dark.json" background="transparent" speed="1" style="width: 20px; height: 20px;"></lottie-player>
-                        <lottie-player id="moonLottie" src="./assets/lottie/moon_sun_light.json" background="transparent" speed="1" style="width: 20px; height: 20px;"></lottie-player>
-                    </span>
-                        <span id="darkLabel" data-locale="dark_mode">Dark mode</span>
-                    </div>
-                    <div class="mobile-menu-right">
-                        <label class="form-switch">
-                            <input type="checkbox" id="mobile-theme-switch" onclick="themeController.toggle()" checked="">
-                            <i></i>
-                        </label>
-                    </div>
-                </div>
+            </p>
+        </div>
+
+        <div id="domainLoadingScreen">
+            <div class="info">
             </div>
+
+            <p class="buttonWrapper">
+                <a class="btn"></a>
+            </p>
         </div>
     </div>
-</div>
 
-<div class="tooltip--backdrop animate">
+    <div class="tooltip--backdrop animate">
 
-</div>
+    </div>
 
-<div class="alert--backdrop animate"></div>
+    <div class="alert--backdrop animate"></div>
 
-<div class="bid__modal--backdrop animate">
-    <div class="bid__modal">
-        <div class="bid__modal--first__step">
+    <div class="bid__modal--backdrop animate">
+        <div class="bid__modal">
+            <div class="bid__modal--first__step">
         <span
                 class="line-clamp bid__modal--header bid__modal--domain__name"
                 id="domainName--bid__modal"
@@ -443,38 +397,38 @@
         >
             Place a bid
         </span>
-            <span id="bidModalSubheader" class="bid__modal--subheader" data-locale="enter_amount">Enter your bid amount</span>
-            <div class="bid__input--container">
-                <svg class="icon bid__input--icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <svg id="inputTonIcon" width="20" height="20" viewBox="0 0 20 20" fill="#0088CC" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92179 3H14.0784C14.6114 2.99998 15.0724 2.99996 15.439 3.0336C15.8104 3.06767 16.2346 3.14549 16.5994 3.41049C17.0923 3.76854 17.4102 4.31891 17.474 4.92479C17.5212 5.37322 17.3767 5.77949 17.2206 6.11821C17.0665 6.45262 16.8362 6.85187 16.5698 7.31356L10.7797 17.3498C10.6189 17.6284 10.3217 17.8 10.0001 17.8C9.67845 17.8 9.38126 17.6284 9.22053 17.3498L3.43043 7.31358C3.16404 6.85188 2.93367 6.45262 2.77958 6.11821C2.6235 5.77949 2.47895 5.37322 2.52618 4.92479C2.59 4.31891 2.90787 3.76854 3.40079 3.41049C3.76561 3.14549 4.18974 3.06767 4.56114 3.0336C4.9278 2.99996 5.38875 2.99998 5.92179 3ZM4.4494 4.87379C4.37749 4.92975 4.33022 5.01158 4.31769 5.10184C4.32054 5.11916 4.33566 5.19411 4.41437 5.36492C4.52964 5.61508 4.71729 5.94215 5.01011 6.4497L9.10009 13.539V4.8H5.96291C5.37696 4.8 4.99988 4.80091 4.72559 4.82607C4.5383 4.84325 4.46583 4.86761 4.4494 4.87379ZM10.9001 4.8V13.539L14.9901 6.4497C15.2829 5.94215 15.4705 5.61508 15.5858 5.36492C15.6645 5.19411 15.6796 5.11916 15.6825 5.10184C15.67 5.01158 15.6227 4.92975 15.5508 4.87379C15.5344 4.86761 15.4619 4.84325 15.2746 4.82607C15.0003 4.80091 14.6232 4.8 14.0373 4.8H10.9001Z"/>
+                <span id="bidModalSubheader" class="bid__modal--subheader" data-locale="enter_amount">Enter your bid amount</span>
+                <div class="bid__input--container">
+                    <svg class="icon bid__input--icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="inputTonIcon" width="20" height="20" viewBox="0 0 20 20" fill="#0088CC" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92179 3H14.0784C14.6114 2.99998 15.0724 2.99996 15.439 3.0336C15.8104 3.06767 16.2346 3.14549 16.5994 3.41049C17.0923 3.76854 17.4102 4.31891 17.474 4.92479C17.5212 5.37322 17.3767 5.77949 17.2206 6.11821C17.0665 6.45262 16.8362 6.85187 16.5698 7.31356L10.7797 17.3498C10.6189 17.6284 10.3217 17.8 10.0001 17.8C9.67845 17.8 9.38126 17.6284 9.22053 17.3498L3.43043 7.31358C3.16404 6.85188 2.93367 6.45262 2.77958 6.11821C2.6235 5.77949 2.47895 5.37322 2.52618 4.92479C2.59 4.31891 2.90787 3.76854 3.40079 3.41049C3.76561 3.14549 4.18974 3.06767 4.56114 3.0336C4.9278 2.99996 5.38875 2.99998 5.92179 3ZM4.4494 4.87379C4.37749 4.92975 4.33022 5.01158 4.31769 5.10184C4.32054 5.11916 4.33566 5.19411 4.41437 5.36492C4.52964 5.61508 4.71729 5.94215 5.01011 6.4497L9.10009 13.539V4.8H5.96291C5.37696 4.8 4.99988 4.80091 4.72559 4.82607C4.5383 4.84325 4.46583 4.86761 4.4494 4.87379ZM10.9001 4.8V13.539L14.9901 6.4497C15.2829 5.94215 15.4705 5.61508 15.5858 5.36492C15.6645 5.19411 15.6796 5.11916 15.6825 5.10184C15.67 5.01158 15.6227 4.92975 15.5508 4.87379C15.5344 4.86761 15.4619 4.84325 15.2746 4.82607C15.0003 4.80091 14.6232 4.8 14.0373 4.8H10.9001Z"/>
+                        </svg>
                     </svg>
-                </svg>
-                <input enterkeyhint="done" id="bid__modal--bid__input" class="bid_modal--input default__input" />
-            </div>
-            <div class="bid__modal--message__container">
-                <span id="bid__input--converted__price" class="converted__price">---</span>
-
-                <div class="bid__input--error" data-locale="small_bid_error">
-                    Bid is too small
+                    <input enterkeyhint="done" id="bid__modal--bid__input" class="bid_modal--input default__input" />
                 </div>
-            </div>
-            <div class="button__container">
-                <button id="bid__modal--submit__step" class="btn">
+                <div class="bid__modal--message__container">
+                    <span id="bid__input--converted__price" class="converted__price">---</span>
+
+                    <div class="bid__input--error" data-locale="small_bid_error">
+                        Bid is too small
+                    </div>
+                </div>
+                <div class="button__container">
+                    <button id="bid__modal--submit__step" class="btn">
                     <span id="bid__modal--submit__step--label_1" data-locale="place_label">
                         Place a&nbsp;
                     </span>
-                    <svg class="bid__modal--ton__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92179 3H14.0784C14.6114 2.99998 15.0724 2.99996 15.439 3.0336C15.8104 3.06767 16.2346 3.14549 16.5994 3.41049C17.0923 3.76854 17.4102 4.31891 17.474 4.92479C17.5212 5.37322 17.3767 5.77949 17.2206 6.11821C17.0665 6.45262 16.8362 6.85187 16.5698 7.31356L10.7797 17.3498C10.6189 17.6284 10.3217 17.8 10.0001 17.8C9.67845 17.8 9.38126 17.6284 9.22053 17.3498L3.43043 7.31358C3.16404 6.85188 2.93367 6.45262 2.77958 6.11821C2.6235 5.77949 2.47895 5.37322 2.52618 4.92479C2.59 4.31891 2.90787 3.76854 3.40079 3.41049C3.76561 3.14549 4.18974 3.06767 4.56114 3.0336C4.9278 2.99996 5.38875 2.99998 5.92179 3ZM4.4494 4.87379C4.37749 4.92975 4.33022 5.01158 4.31769 5.10184C4.32054 5.11916 4.33566 5.19411 4.41437 5.36492C4.52964 5.61508 4.71729 5.94215 5.01011 6.4497L9.10009 13.539V4.8H5.96291C5.37696 4.8 4.99988 4.80091 4.72559 4.82607C4.5383 4.84325 4.46583 4.86761 4.4494 4.87379ZM10.9001 4.8V13.539L14.9901 6.4497C15.2829 5.94215 15.4705 5.61508 15.5858 5.36492C15.6645 5.19411 15.6796 5.11916 15.6825 5.10184C15.67 5.01158 15.6227 4.92975 15.5508 4.87379C15.5344 4.86761 15.4619 4.84325 15.2746 4.82607C15.0003 4.80091 14.6232 4.8 14.0373 4.8H10.9001Z" fill="white"/>
-                    </svg>
-                    <span id="bid__modal--submit__price"></span>
-                    &nbsp;
-                    <span id="bid__modal--submit__step--label_2" data-locale="place_label_2">bid</span>
-                </button>
+                        <svg class="bid__modal--ton__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.92179 3H14.0784C14.6114 2.99998 15.0724 2.99996 15.439 3.0336C15.8104 3.06767 16.2346 3.14549 16.5994 3.41049C17.0923 3.76854 17.4102 4.31891 17.474 4.92479C17.5212 5.37322 17.3767 5.77949 17.2206 6.11821C17.0665 6.45262 16.8362 6.85187 16.5698 7.31356L10.7797 17.3498C10.6189 17.6284 10.3217 17.8 10.0001 17.8C9.67845 17.8 9.38126 17.6284 9.22053 17.3498L3.43043 7.31358C3.16404 6.85188 2.93367 6.45262 2.77958 6.11821C2.6235 5.77949 2.47895 5.37322 2.52618 4.92479C2.59 4.31891 2.90787 3.76854 3.40079 3.41049C3.76561 3.14549 4.18974 3.06767 4.56114 3.0336C4.9278 2.99996 5.38875 2.99998 5.92179 3ZM4.4494 4.87379C4.37749 4.92975 4.33022 5.01158 4.31769 5.10184C4.32054 5.11916 4.33566 5.19411 4.41437 5.36492C4.52964 5.61508 4.71729 5.94215 5.01011 6.4497L9.10009 13.539V4.8H5.96291C5.37696 4.8 4.99988 4.80091 4.72559 4.82607C4.5383 4.84325 4.46583 4.86761 4.4494 4.87379ZM10.9001 4.8V13.539L14.9901 6.4497C15.2829 5.94215 15.4705 5.61508 15.5858 5.36492C15.6645 5.19411 15.6796 5.11916 15.6825 5.10184C15.67 5.01158 15.6227 4.92975 15.5508 4.87379C15.5344 4.86761 15.4619 4.84325 15.2746 4.82607C15.0003 4.80091 14.6232 4.8 14.0373 4.8H10.9001Z" fill="white"/>
+                        </svg>
+                        <span id="bid__modal--submit__price"></span>
+                        &nbsp;
+                        <span id="bid__modal--submit__step--label_2" data-locale="place_label_2">bid</span>
+                    </button>
+                </div>
             </div>
-        </div>
 
-        <div class="bid__modal--second__step">
+            <div class="bid__modal--second__step">
         <span
                 class="line-clamp bid__modal--header bid__modal--domain__name"
                 id="domainName--bid__modal--payment"
@@ -482,7 +436,7 @@
         >
             Place a bid
         </span>
-            <span class="bid__modal--subheader">
+                <span class="bid__modal--subheader">
             <span data-locale="pay_mobile" class="hide__desktop">Pay</span>
             <span data-locale="scan_qr" class="hide__mobile">Scan the QR code and pay</span>
             <span id="priceContainer">
@@ -495,10 +449,10 @@
             <span class="bidPrice--tonkepeer" data-locale="scan_qr_link">via Tonkeeper.</span>
         </span>
 
-            <div id="freeQr" class="bid__modal--qr"></div>
+                <div id="freeQr" class="bid__modal--qr"></div>
 
-            <div class="button__container">
-                <a id="tonkeeperButton" target="_blank" class="btn">
+                <div class="button__container">
+                    <a id="tonkeeperButton" target="_blank" class="btn">
                     <span class="mobile__bid--label">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 18" class="icon bid__modal--icon">
                           <g clip-path="url(#a)">
@@ -516,19 +470,19 @@
                             Place a bid via Tonkeeper
                         </span>
                     </span>
-                </a>
-                <a id="otherPaymentsMethods" class="btn outline no__underline secondary__mobile">
+                    </a>
+                    <a id="otherPaymentsMethods" class="btn outline no__underline secondary__mobile">
                     <span data-locale="use_other_payments">
                         Use other payment methods
                         <svg class="arrow icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 15L11.5 10L7 15" stroke="#0088CC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
-                </a>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="bid__modal--payment">
+            <div class="bid__modal--payment">
             <span
                     class="line-clamp bid__modal--header bid__modal--domain__name"
                     id="domainName--bid__modal--payment"
@@ -536,7 +490,7 @@
             >
                 Place a bid
             </span>
-            <span class="bid__modal--subheader">
+                <span class="bid__modal--subheader">
                     <span data-locale="payment_subheader_1">Go to the</span>
                     &nbsp;
                     <span id="payment-loading-wallet"></span>
@@ -554,85 +508,85 @@
                 </span>
             </span>
 
-            <div class="payment__message">
-                <div class="payment__lottie--container">
-                    <lottie-player
-                        id="paymentLottieLoading"
-                        src="./assets/lottie/loader.json"
-                        background="transparent"
-                        loop
-                        speed="1"
-                        class="payment__lottie"
-                    >
-                    </lottie-player>
-                    <lottie-player
-                        id="paymentLottieSuccess"
-                        src="./assets/lottie/success.json"
-                        background="transparent"
-                        speed="1"
-                        class="payment__lottie"
-                    >
-                    </lottie-player>
-                    <lottie-player
-                        id="paymentLottieFailure"
-                        src="./assets/lottie/failure.json"
-                        background="transparent"
-                        speed="1"
-                        class="payment__lottie"
-                    >
-                    </lottie-player>
+                <div class="payment__message">
+                    <div class="payment__lottie--container">
+                        <lottie-player
+                                id="paymentLottieLoading"
+                                src="./assets/lottie/loader.json"
+                                background="transparent"
+                                loop
+                                speed="1"
+                                class="payment__lottie"
+                        >
+                        </lottie-player>
+                        <lottie-player
+                                id="paymentLottieSuccess"
+                                src="./assets/lottie/success.json"
+                                background="transparent"
+                                speed="1"
+                                class="payment__lottie"
+                        >
+                        </lottie-player>
+                        <lottie-player
+                                id="paymentLottieFailure"
+                                src="./assets/lottie/failure.json"
+                                background="transparent"
+                                speed="1"
+                                class="payment__lottie"
+                        >
+                        </lottie-player>
+                    </div>
+                    <div id="payment-message-loading" class="payment__message--text">
+                        <div class="payment__message--title" data-locale="payment_loading_header">Checking Payment</div>
+                        <div class="payment__message--description" data-locale="payment_loading_description">We are checking your payment. It may take some time.</div>
+                    </div>
+                    <div id="payment-message-success" class="payment__message--text">
+                        <div class="payment__message--title" data-locale="payment_success_header">Placed bid successfully</div>
+                        <div class="payment__message--description" data-locale="payment_success_description">If your bid is outbid, the money will be returned to the wallet.</div>
+                    </div>
+                    <div id="payment-message-rejection" class="payment__message--text">
+                        <div class="payment__message--title" data-locale="payment_failure_rejection_header">Payment rejected</div>
+                        <div class="payment__message--description" data-locale="payment_failure_rejection_description">You have rejected the payment. Please try again.</div>
+                    </div>
+                    <div id="payment-message-error" class="payment__message--text">
+                        <div class="payment__message--title" data-locale="payment_failure_error_header">Something went wrong</div>
+                        <div class="payment__message--description" data-locale="payment_failure_error_description">Please reload the page or try again later.</div>
+                    </div>
                 </div>
-                <div id="payment-message-loading" class="payment__message--text">
-                    <div class="payment__message--title" data-locale="payment_loading_header">Checking Payment</div>
-                    <div class="payment__message--description" data-locale="payment_loading_description">We are checking your payment. It may take some time.</div>
-                </div>
-                <div id="payment-message-success" class="payment__message--text">
-                    <div class="payment__message--title" data-locale="payment_success_header">Placed bid successfully</div>
-                    <div class="payment__message--description" data-locale="payment_success_description">If your bid is outbid, the money will be returned to the wallet.</div>
-                </div>
-                <div id="payment-message-rejection" class="payment__message--text">
-                    <div class="payment__message--title" data-locale="payment_failure_rejection_header">Payment rejected</div>
-                    <div class="payment__message--description" data-locale="payment_failure_rejection_description">You have rejected the payment. Please try again.</div>
-                </div>
-                <div id="payment-message-error" class="payment__message--text">
-                    <div class="payment__message--title" data-locale="payment_failure_error_header">Something went wrong</div>
-                    <div class="payment__message--description" data-locale="payment_failure_error_description">Please reload the page or try again later.</div>
-                </div>
+                <button id="paymentCloseButton" style="display: none;" class="btn">
+                    <span data-locale="payment_done_button">Done</span>
+                </button>
             </div>
-            <button id="paymentCloseButton" style="display: none;" class="btn">
-                <span data-locale="payment_done_button">Done</span>
-            </button>
-        </div>
 
-        <div id="otherPaymentsMethodsContainer" class="bid__modal--payments">
-            <div class="bid__modal--alert">
+            <div id="otherPaymentsMethodsContainer" class="bid__modal--payments">
+                <div class="bid__modal--alert">
                 <span data-locale="pay_attention">
                     Use only <a class="unbreak" href="https://ton.org/wallets?filterBy=wallets_non_custodial" target="_blank">non-custodial</a> wallets to place bets  and make payments.
                 </span>
-            </div>
+                </div>
 
-            <div class="bid__modal--meta">
-                <p class="row align__center">
-                    <span class="row__title" data-locale="sent_to">Sent to</span>
-                    <span id="transactionAddress" class="addr node__to__copy"></span>
-                    <button class="copy__addr"></button>
-                </p>
+                <div class="bid__modal--meta">
+                    <p class="row align__center">
+                        <span class="row__title" data-locale="sent_to">Sent to</span>
+                        <span id="transactionAddress" class="addr node__to__copy"></span>
+                        <button class="copy__addr"></button>
+                    </p>
 
-                <p class="row align__center">
-                    <span class="row__title" data-locale="message">Message</span><span id="freeComment" class="domain__name node__to__copy"></span>
-                    <button class="copy__name"></button>
-                </p>
-            </div>
+                    <p class="row align__center">
+                        <span class="row__title" data-locale="message">Message</span><span id="freeComment" class="domain__name node__to__copy"></span>
+                        <button class="copy__name"></button>
+                    </p>
+                </div>
 
-            <div class="button__container">
-                <a id="freeBtn" target="_blank" class="btn inversed__mobile">
+                <div class="button__container">
+                    <a id="freeBtn" target="_blank" class="btn inversed__mobile">
                     <span class="mobile__bid--default__label">
                         <span data-locale="place_with_extension">
                             Open wallet
                         </span>
                     </span>
-                </a>
-                <a id="copyLinkbutton" class="btn outline secondary">
+                    </a>
+                    <a id="copyLinkbutton" class="btn outline secondary">
                     <span class="mobile__bid--default__label">
                         <span class="icon copy__link__icon unbreak"></span>
                         <span class="icon copy__link--success__icon unbreak"></span>
@@ -643,61 +597,61 @@
                             Copied!
                         </span>
                     </span>
-                </a>
+                    </a>
+                </div>
+            </div>
+            <div class="payment__spacer">
+                -
+                -
+                -
             </div>
         </div>
-        <div class="payment__spacer">
-            -
-            -
-            -
-        </div>
-    </div>
 
-    <div class="wallet__modal">
-        <div class="wallet__modal--first__step" id="wallet__modal--first__step">
+        <div class="wallet__modal">
+            <div class="wallet__modal--first__step" id="wallet__modal--first__step">
             <span class="line-clamp bid__modal--header" data-locale="wallet_modal_first_title">
                 Connect wallet
             </span>
-            <span class="bid__modal--subheader" data-locale="wallet_modal_first_description">
+                <span class="bid__modal--subheader" data-locale="wallet_modal_first_description">
                 Choose your preferred wallet from the options to get started.
             </span>
 
-            <div class="wallet__modal--buttons" id="wallet__modal--buttons__container"></div>
+                <div class="wallet__modal--buttons" id="wallet__modal--buttons__container"></div>
 
-            <span class="wallet__modal--footer" data-locale="wallet_modal_first_footer">
+                <span class="wallet__modal--footer" data-locale="wallet_modal_first_footer">
                 Don't have a crypto wallet?
             </span>
 
-            <a class="wallet__modal--link" href="https://ton.org/en/wallets" target="_blank" rel="noopener noreferrer" data-locale="wallet_modal_first_setup">
-                Set up wallet
-            </a>
-        </div>
+                <a class="wallet__modal--link" href="https://ton.org/en/wallets" target="_blank" rel="noopener noreferrer" data-locale="wallet_modal_first_setup">
+                    Set up wallet
+                </a>
+            </div>
 
-        <div class="wallet__modal--second__step">
+            <div class="wallet__modal--second__step">
             <span class="line-clamp bid__modal--header" >
                 <span data-locale="wallet_modal_second_title_1">Connect</span>
                 <span id="wallet__modal--second__step--wallet__title">
                 <span data-locale="wallet_modal_second_title">wallet</span></span>
             </span>
-            <span class="bid__modal--subheader" style="display: block;">
+                <span class="bid__modal--subheader" style="display: block;">
                 <span data-locale="wallet_modal_second_description_1">Scan QR code with your mobile phone or</span>
                 <span id="wallet__modal--second__step--wallet__description">wallet</span>
                 <span data-locale="wallet_modal_second_description_2">app.</span>
             </span>
 
-            <div class="wallet_modal--second__qr" id="connect-wallet-qr-link"></div>
+                <div class="wallet_modal--second__qr" id="connect-wallet-qr-link"></div>
 
-            <button id="back-to-wallets-list-button" class="btn wallet--secondary_button" style="display: none;" data-locale="wallet_modal_second_back_button">
-                Back
-            </button>
+                <button id="back-to-wallets-list-button" class="btn wallet--secondary_button" style="display: none;" data-locale="wallet_modal_second_back_button">
+                    Back
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="careete__helper"></div>
+    <div class="careete__helper"></div>
 
-<footer class="footer">
-</footer>
+    <footer class="footer">
+    </footer>
 </div>
 <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>

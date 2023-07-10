@@ -50,7 +50,7 @@ const assembleRowData = (item) => {
   const domainName = item.name;
   const salePrice = TonWeb.utils.fromNano(getMinPrice(domainName));
   const expiryDate = new Date(item.expiring_at * 1000);
-  
+
   return { domainName, salePrice, expiryDate };
 }
 
@@ -76,7 +76,7 @@ const buildSalePriceCell = (cell, priceInTON, priceInUSDT) => {
 
   const spanPriceInUSDT = document.createElement('span');
   spanPriceInUSDT.classList.add('my-domains-cell-price-caption');
-  spanPriceInUSDT.innerText = formatNumber(priceInUSDT, 2); 
+  spanPriceInUSDT.innerText = formatNumber(priceInUSDT, 2);
   priceCellDiv.appendChild(spanPriceInUSDT);
 
   cell.appendChild(priceCellDiv);
@@ -118,7 +118,7 @@ const buildDesktopSpanPriceInUSDT = (node, expiryDate) => {
   const desktopSpanPriceInUSDT = document.createElement('span');
   desktopSpanPriceInUSDT.classList.add('my-domains-cell-expiry-caption-desktop');
 
-  desktopSpanPriceInUSDT.innerText = formatDate(expiryDate); 
+  desktopSpanPriceInUSDT.innerText = formatDate(expiryDate);
   node.appendChild(desktopSpanPriceInUSDT);
 }
 
@@ -126,7 +126,7 @@ const buildMobileSpanPriceInUSDT = (node, expiryDate) => {
   const mobileSpanPriceInUSDT = document.createElement('span');
   mobileSpanPriceInUSDT.classList.add('my-domains-cell-expiry-caption-mobile');
 
-  mobileSpanPriceInUSDT.innerText = formatDateShort(expiryDate); 
+  mobileSpanPriceInUSDT.innerText = formatDateShort(expiryDate);
   node.appendChild(mobileSpanPriceInUSDT);
 }
 
@@ -205,10 +205,6 @@ function navigateToMyDomainsView () {
 }
 
 $('#myDomainsButton').addEventListener('click', navigateToMyDomainsView);
-$('#myDomainsMobileButton').addEventListener('click', () => {
-  navigateToMyDomainsView();
-  toggleMobileMenu();
-});
 // ---------------
 
 // --- HIDE/SHOW TOGGLE METHODS ---

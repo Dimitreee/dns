@@ -14,21 +14,25 @@
 
     function toggleThemeSwitcher() {
         const themeSwitcher = document.getElementById('mobile-theme-switch')
-        const currentTheme = themeController.getTheme()
-        if (currentTheme === 'light') {
-            themeSwitcher.checked = false
-            return
-        }
+        if (themeSwitcher) {
+            const currentTheme = themeController.getTheme()
+            if (currentTheme === 'light') {
+                themeSwitcher.checked = false
+                return
+            }
 
-        themeSwitcher.checked = true
+            themeSwitcher.checked = true
+        }
     }
 
     closeMenu = function () {
-        mobileMenu.element.classList.remove('mobile-menu-opened')
-        mobileMenu.element.classList.add('mobile-menu-closed')
-        mobileMenu.isOpened = false
-        document.body.style.overflow = ''
-        toggleThemeSwitcher()
+        if (mobileMenu && mobileMenu.element) {
+            mobileMenu.element.classList.remove('mobile-menu-opened')
+            mobileMenu.element.classList.add('mobile-menu-closed')
+            mobileMenu.isOpened = false
+            document.body.style.overflow = ''
+            toggleThemeSwitcher()
+        }
     }
 
     toggleMobileMenu = function () {

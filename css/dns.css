@@ -298,7 +298,7 @@ body.hidden{
 /* START PAGE */
 
 .start {
-    padding: 0 16px;
+    padding: 0 24px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -839,17 +839,17 @@ nav .container-inner {
     }
 
     .hover__button.menu__controller {
-        padding: 0;
+        padding: 8px;
+        display: flex;
     }
 
     .hover__button.close-menu-icon .icon {
         color: var(--text-primary);
+        margin: auto;
     }
 
     .hover__button.menu__controller .icon {
         color: var(--text-primary);
-        width: 32px;
-        height: 32px;
     }
 
     .nav-input input::placeholder {
@@ -1137,13 +1137,13 @@ p {
     text-align: center;
     word-break: break-all;
 }
-.bid__modal--first__step, 
-.bid__modal--second__step, 
+.bid__modal--first__step,
+.bid__modal--second__step,
 .bid__modal--payment {
     z-index: 4;
 }
 
-.bid__modal--first__step, 
+.bid__modal--first__step,
 .bid__modal--second__step,
 .bid__modal--payment,
 #otherPaymentsMethodsContainer {
@@ -1186,7 +1186,7 @@ p {
 }
 
 .bid__modal--payment .payment__message--text {
-    display: none; 
+    display: none;
     flex-direction: column;
     gap: 4px;
     text-align: center;
@@ -1208,7 +1208,7 @@ p {
     color: var(--text-tetriary);
 }
 
-#paymentFailureButton, 
+#paymentFailureButton,
 #paymentSuccessButton,
 #paymentCloseButton {
     margin-top: 24px;
@@ -1560,7 +1560,7 @@ p {
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--background-suggestions);
 }
-  
+
 .wallet__tooltip__row {
     background: none;
     border: none;
@@ -1584,7 +1584,7 @@ p {
 }
 
 .wallet__tooltip__row:hover {
-    color: var(--accent-default);  
+    color: var(--accent-default);
 }
 
 .wallet__tooltip__row svg {
@@ -1736,9 +1736,9 @@ p {
     }
 
 
-    .bid__modal--first__step, 
-    .bid__modal--second__step, 
-    .bid__modal--payment, 
+    .bid__modal--first__step,
+    .bid__modal--second__step,
+    .bid__modal--payment,
     #otherPaymentsMethodsContainer {
         padding: 0;
     }
@@ -1886,8 +1886,8 @@ p {
         max-width: 148px;
     }
 
-    .bid__modal--first__step, 
-    .bid__modal--second__step, 
+    .bid__modal--first__step,
+    .bid__modal--second__step,
     .bid__modal--payment,
     #otherPaymentsMethodsContainer {
         width: 100%;
@@ -2218,7 +2218,7 @@ p {
     .bid__modal--payment .bid__modal--subheader {
         max-width: 260px;
     }
-    
+
     .bid__modal--payment .payment__message--description {
         font-size: 14px;
         line-height: 20px;
@@ -2614,7 +2614,7 @@ html[data-theme='dark'] .mobile-menu #moonLottieBlack {
 
 .mobile-menu__wallet-menu__container {
     display: none;
-    
+
     flex-direction: column;
     gap: 16px;
 }
@@ -2744,7 +2744,7 @@ tc-root * {
 }
 
 [data-tc-dropdown="true"] {
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.08) !important; 
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.08) !important;
     border: 1px solid var(--button-secondary-stroke) !important;
 }
 
@@ -2972,7 +2972,7 @@ a.edit-btn:hover {
     animation: rotating 1s linear infinite;
 }
 
-@media screen and (max-width: 568px) { 
+@media screen and (max-width: 568px) {
     .wallet__connect svg {
         width: 20px;
         height: 20px;

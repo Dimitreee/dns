@@ -90,13 +90,6 @@ $('.badge__dns').addEventListener('click', () => {
     setScreen('startScreen')
 })
 
-$('.badge__dns-mobile').addEventListener('click', () => {
-    clear()
-    closeMenu()
-    window.history.pushState('', 'TON DNS ', '#')
-    setScreen('startScreen')
-})
-
 // SET DOMAIN
 
 const validateDomain = (domain) => {

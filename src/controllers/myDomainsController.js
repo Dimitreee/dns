@@ -19,7 +19,7 @@ class MyDomainsController {
 
     this.showMyDomainsButton();
     this.startLoadingMyDomainsButton();
-  
+
     this.setAccountAddress(accountAddress);
     this.stopLoadingMyDomainsButton();
 
@@ -64,31 +64,28 @@ class MyDomainsController {
 
   showMyDomainsButton() {
     $('#myDomainsButton').style.display = "flex";
-    $('#myDomainsMobileButton').style.display = "flex";
+    $('.mobile__domains__button').style.display = "block";
   }
 
   hideMyDomainsButton() {
     $('#myDomainsButton').style.display = "none";
-    $('#myDomainsMobileButton').style.display = "none";
+    $('.mobile__domains__button').style.display = "none";
   }
 
   startLoadingMyDomainsButton() {
     $('#myDomainsButton').disabled = true;
-    $('#myDomainsMobileButton').disabled = true;
+    $('.mobile__domains__button').disabled = true;
 
     $('#myDomainsButton').classList.add('my-domains-loading-button');
-    $('#myDomainsMobileButton').classList.add('my-domains-loading-button');
   }
 
   stopLoadingMyDomainsButton() {
     $('#myDomainsButton').disabled = false;
-    $('#myDomainsMobileButton').disabled = false;
+    $('.mobile__domains__button').disabled = false;
 
     $('#myDomainsButton').classList.remove('my-domains-loading-button');
-    $('#myDomainsMobileButton').classList.remove('my-domains-loading-button');
 
-    $('#myDomainsButton span').innerText = store.localeDict.my_domains; 
-    $('#myDomainsMobileButtonTitle').innerText = store.localeDict.my_domains;
+    $('#myDomainsButton span').innerText = store.localeDict.my_domains;
   }
 
   startDataLoading() {
