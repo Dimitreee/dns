@@ -10,16 +10,18 @@
 		moonLottie.seek(31)
 	}
 
-	themeButton.addEventListener('click', function () {
-		if (themeController.getTheme() === 'light') {
-			sunLottie.setDirection(1)
-			sunLottie.play()
-			moonLottie.stop()
-			return
-		}
+	if (themeButton) {
+		themeButton.addEventListener('click', function () {
+			if (themeController.getTheme() === 'light') {
+				sunLottie.setDirection(1)
+				sunLottie.play()
+				moonLottie.stop()
+				return
+			}
 
-		moonLottie.setDirection(1)
-		moonLottie.play()
-		sunLottie.stop()
-	})
+			moonLottie.setDirection(1)
+			moonLottie.play()
+			sunLottie.stop()
+		})
+	}
 })()

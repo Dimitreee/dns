@@ -552,7 +552,6 @@ const renderSearchHistory = (node) => {
 
             setHistoryToStorage(historyFromStorage)
             removeListeners()
-            renderSearchHistory(node)
 
             historyFromStorage = getHistoryFromStorage()
 
@@ -614,7 +613,7 @@ const attachPaymentModalListeners = (
             domain,
             price,
             address,
-        ); 
+        );
     }
 
     $(modalButton).addEventListener('click', togglePaymentModalOnClick, false)
@@ -985,7 +984,7 @@ function togglePaymentModal(
     $('#copyLinkbutton').setAttribute('address', buyUrl)
 
     togglePaymentModal();
-} 
+}
 
 let otherPaymentsTimerId = null;
 function renderOtherPaymentsMethods() {
@@ -1377,9 +1376,9 @@ window.addEventListener('resize', debouncedHandleWindowResize)
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.suggestions__input').forEach((input) => {
-        input.addEventListener('focus', (e) => {
-            renderSearchHistory(input)
-        })
+        // input.addEventListener('focus', (e) => {
+            // renderSearchHistory(input)
+        // })
     })
     setAppHeight()
 
