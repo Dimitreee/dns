@@ -11,7 +11,6 @@ class ThemeController {
 	}
 
 	setTheme(theme) {
-		window.localStorage.setItem('theme', theme)
 		document.documentElement.setAttribute('data-theme', theme)
 	}
 
@@ -23,7 +22,6 @@ class ThemeController {
 		} catch (e) {
 			console.log('error')
 		}
-		return window.localStorage.getItem('theme') || THEME_LIGHT
 	}
 
 	toggle() {
