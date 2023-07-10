@@ -16,6 +16,13 @@ class ThemeController {
 	}
 
 	getTheme() {
+		try {
+			console.log(window.Telegram.WebApp)
+
+			return window.Telegram.WebApp.colorScheme
+		} catch (e) {
+			console.log('error')
+		}
 		return window.localStorage.getItem('theme') || THEME_LIGHT
 	}
 
