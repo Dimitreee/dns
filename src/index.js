@@ -746,6 +746,7 @@ function togglePaymentModal(
         submitStepButton.removeEventListener('click', checkIfLoggedIn)
         submitStepButton.removeEventListener('click', checkIfLoggedIn)
         $('body').classList.remove('scroll__disabled')
+        setDomain(domain)
     }
 
     const togglePaymentModal = () => {
